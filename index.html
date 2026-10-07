@@ -1,0 +1,1290 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Story About Us ♡</title>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- ================= CSS ================= -->
+    <style>
+
+        /* ========================================
+           BASIC SETTINGS
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #fff7fa;
+            color: #5c4650;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ========================================
+           COLOR
+        ======================================== */
+
+        :root {
+            --pink: #f3a6c0;
+            --dark-pink: #d75d88;
+            --light-pink: #ffe1eb;
+            --soft-pink: #fff0f5;
+            --cream: #fffaf8;
+            --text: #5c4650;
+            --white: #ffffff;
+        }
+
+
+        /* ========================================
+           TYPOGRAPHY
+        ======================================== */
+
+        h1,
+        h2,
+        h3 {
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+        }
+
+        .small-text {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--dark-pink);
+        }
+
+
+        /* ========================================
+           NAVBAR
+        ======================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 100;
+
+            background: rgba(255, 247, 250, 0.75);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--dark-pink);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-pink);
+        }
+
+
+        /* ========================================
+           FLOATING HEARTS
+        ======================================== */
+
+        .floating-heart {
+            position: fixed;
+
+            color: var(--pink);
+            font-size: 25px;
+
+            pointer-events: none;
+
+            animation: float 5s ease-in-out infinite;
+
+            z-index: 2;
+        }
+
+        .heart-1 {
+            top: 25%;
+            left: 8%;
+        }
+
+        .heart-2 {
+            top: 65%;
+            right: 8%;
+            animation-delay: 1s;
+        }
+
+        .heart-3 {
+            top: 45%;
+            right: 20%;
+
+            font-size: 16px;
+
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(8deg);
+            }
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+
+            padding: 100px 20px;
+        }
+
+        .hero-content {
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 8rem);
+            line-height: 0.9;
+
+            margin: 20px 0;
+
+            color: #664d57;
+        }
+
+        .hero h1 span,
+        .section-title span,
+        .ending h2 span {
+            color: var(--dark-pink);
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 0.9rem;
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+        .main-button {
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: var(--dark-pink);
+            color: white;
+
+            border-radius: 50px;
+
+            font-size: 0.8rem;
+
+            transition: 0.3s;
+
+            box-shadow: 0 10px 25px rgba(215, 93, 136, 0.2);
+        }
+
+        .main-button:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 15px 30px rgba(215, 93, 136, 0.3);
+        }
+
+        .scroll-text {
+            position: absolute;
+
+            bottom: 30px;
+
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+
+            color: #b99da7;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* ========================================
+           GENERAL SECTION
+        ======================================== */
+
+        .section {
+            padding: 130px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 90px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 0.95;
+
+            margin-top: 15px;
+        }
+
+
+        /* ========================================
+           FIRST MEET
+        ======================================== */
+
+        .first-meet {
+            background: var(--soft-pink);
+        }
+
+        .story-intro {
+            max-width: 650px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .intro-text {
+            max-width: 550px;
+        }
+
+        .number {
+            color: var(--dark-pink);
+
+            font-size: 0.75rem;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .intro-text h3 {
+            font-size: 2.3rem;
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 0.9rem;
+
+            line-height: 1.9;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* ========================================
+           TIMELINE
+        ======================================== */
+
+        .timeline {
+            max-width: 800px;
+
+            margin: 150px auto 0;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            top: 0;
+
+            width: 1px;
+            height: 100%;
+
+            background: var(--pink);
+        }
+
+        .timeline-item {
+            display: flex;
+
+            justify-content: flex-start;
+
+            width: 100%;
+
+            margin-bottom: 90px;
+        }
+
+        .timeline-item.reverse {
+            justify-content: flex-end;
+        }
+
+        .timeline-content {
+            width: 42%;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(100, 60, 75, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-number {
+            position: absolute;
+
+            left: calc(50% - 18px);
+
+            width: 36px;
+            height: 36px;
+
+            background: var(--dark-pink);
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 0.7rem;
+
+            z-index: 2;
+        }
+
+        .timeline-content span {
+            font-size: 0.7rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: var(--dark-pink);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+
+            margin: 8px 0;
+        }
+
+        .timeline-content p {
+            font-size: 0.8rem;
+
+            line-height: 1.8;
+        }
+
+        .chapter-transition {
+            text-align: center;
+
+            margin-top: 120px;
+        }
+
+        .chapter-transition p {
+            font-family: "DM Serif Display", serif;
+
+            font-size: 2rem;
+
+            font-style: italic;
+        }
+
+        .chapter-transition span {
+            display: block;
+
+            color: var(--dark-pink);
+
+            font-size: 2rem;
+
+            margin-top: 15px;
+        }
+
+
+        /* ========================================
+           CONFESSION
+        ======================================== */
+
+        .confession {
+            background: #fff7fa;
+
+            text-align: center;
+        }
+
+        .letter-wrapper {
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 80px;
+        }
+
+        .envelope {
+            width: 280px;
+            height: 190px;
+
+            background: var(--light-pink);
+
+            position: relative;
+
+            border-radius: 8px;
+
+            box-shadow: 0 20px 40px rgba(100, 60, 75, 0.12);
+
+            cursor: pointer;
+
+            transition: 0.4s;
+        }
+
+        .envelope:hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .envelope-top {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+
+            border-top: 100px solid #f7bfd1;
+        }
+
+        .letter-preview {
+            position: absolute;
+
+            z-index: 2;
+
+            top: 55px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 180px;
+
+            background: white;
+
+            padding: 18px;
+
+            box-shadow: 0 8px 20px rgba(100, 60, 75, 0.08);
+
+            transition: 0.5s;
+        }
+
+        .letter-preview span {
+            font-family: "DM Serif Display", serif;
+
+            font-size: 1.2rem;
+        }
+
+        .letter-preview p {
+            font-size: 0.6rem;
+
+            color: #a98d97;
+
+            margin-top: 5px;
+        }
+
+
+        /* ========================================
+           OPEN ENVELOPE
+        ======================================== */
+
+        .envelope.open .letter-preview {
+            transform: translate(-50%, -70px);
+        }
+
+        .envelope.open {
+            margin-bottom: 70px;
+        }
+
+
+        /* ========================================
+           CONFESSION CARD
+        ======================================== */
+
+        .confession-card {
+            max-width: 650px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 65px;
+
+            text-align: left;
+
+            box-shadow: 0 20px 60px rgba(100, 60, 75, 0.08);
+
+            border: 1px solid #f5dce5;
+
+            position: relative;
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            pointer-events: none;
+
+            transition: 0.7s ease;
+        }
+
+        .confession-card.show {
+            opacity: 1;
+
+            transform: translateY(0);
+
+            pointer-events: auto;
+        }
+
+        .confession-card::before,
+        .confession-card::after {
+            content: "♡";
+
+            position: absolute;
+
+            color: var(--pink);
+
+            font-size: 1.5rem;
+        }
+
+        .confession-card::before {
+            top: 20px;
+            left: 25px;
+        }
+
+        .confession-card::after {
+            bottom: 20px;
+            right: 25px;
+        }
+
+        .confession-card h3 {
+            font-size: 2.7rem;
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+        }
+
+        .confession-card .line {
+            width: 60px;
+            height: 2px;
+
+            background: var(--pink);
+
+            margin: 25px 0;
+        }
+
+        .confession-card > p:not(.number) {
+            font-size: 0.85rem;
+
+            line-height: 2;
+
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            margin-top: 35px;
+
+            font-family: "DM Serif Display", serif;
+
+            font-style: italic;
+
+            font-size: 1.1rem;
+
+            color: var(--dark-pink);
+        }
+
+
+        /* ========================================
+           ENDING
+        ======================================== */
+
+        .ending {
+            min-height: 100vh;
+
+            background: var(--light-pink);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+        }
+
+        .ending-content {
+            max-width: 700px;
+        }
+
+        .ending h2 {
+            font-size: clamp(4rem, 9vw, 7rem);
+
+            line-height: 0.9;
+
+            margin: 25px 0;
+        }
+
+        .ending-line {
+            width: 80px;
+            height: 1px;
+
+            background: var(--dark-pink);
+
+            margin: 35px auto;
+        }
+
+        .final-message {
+            font-size: 0.9rem;
+
+            line-height: 2;
+
+            max-width: 500px;
+
+            margin: 10px auto;
+        }
+
+        .big-heart {
+            color: var(--dark-pink);
+
+            font-size: 4rem;
+
+            margin: 40px 0 20px;
+
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        .made-with {
+            font-size: 0.7rem;
+
+            letter-spacing: 1px;
+
+            color: #9d7b87;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            background: #5c4650;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 0.65rem;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 18px 6%;
+            }
+
+            .nav-links {
+                gap: 12px;
+
+                font-size: 0.6rem;
+            }
+
+            .section {
+                padding: 100px 7%;
+            }
+
+            .story-intro {
+                flex-direction: column;
+
+                gap: 50px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item,
+            .timeline-item.reverse {
+                justify-content: flex-start;
+
+                padding-left: 45px;
+            }
+
+            .timeline-number {
+                left: -3px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .confession-card {
+                padding: 40px 30px;
+            }
+
+            .confession-card h3 {
+                font-size: 2.2rem;
+            }
+
+            .floating-heart {
+                display: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         FLOATING DECORATION
+    ======================================== -->
+
+    <div class="floating-heart heart-1">♡</div>
+    <div class="floating-heart heart-2">♡</div>
+    <div class="floating-heart heart-3">♡</div>
+
+
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            ♡
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#first-meet">
+                
+            </a>
+
+            <a href="#confession">
+                
+            </a>
+
+            <a href="#ending">
+                
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ========================================
+         HOME
+    ======================================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p class="small-text">
+                a little something for you
+            </p>
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <h1>
+                a quiet<br>
+                <span>place.</span>
+            </h1>
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p class="hero-description">
+                some moments are too special<br>
+                to simply be forgotten.
+            </p>
+
+            <!-- ✏️ UBAH TEKS TOMBOL DI SINI -->
+            <a href="#first-meet" class="main-button">
+                let's go ♡
+            </a>
+
+        </div>
+
+
+        <!-- ✏️ UBAH TEKS INI JIKA MAU -->
+        <div class="scroll-text">
+            scroll down ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FIRST TIME WE MEET
+    ======================================== -->
+
+    <section id="first-meet" class="section first-meet">
+
+
+        <div class="section-title">
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p class="small-text">
+                chapter one
+            </p>
+
+            <!-- ✏️ UBAH JUDUL DI SINI -->
+            <h2>
+                first time<br>
+                <span>we meet.</span>
+            </h2>
+
+        </div>
+
+
+
+        <!-- INTRO CERITA -->
+
+        <div class="story-intro">
+
+            <div class="intro-text">
+
+                <!-- ✏️ UBAH ANGKA / PENANDA DI SINI JIKA MAU -->
+                <p class="number">
+                    01
+                </p>
+
+                <!-- ✏️ UBAH JUDUL DI SINI -->
+                <h3>
+                    it all started<br>
+                    with a simple moment.
+                </h3>
+
+                <!-- ✏️ UBAH CERITA DI SINI -->
+                <p>
+                    mungkin waktu itu kita belum tahu kalau
+                    pertemuan kecil itu bakal menjadi salah satu
+                    bagian yang cukup berarti.
+                </p>
+
+                <!-- ✏️ UBAH KALIMAT DI SINI -->
+                <p>
+                    and somehow, here we are.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TIMELINE -->
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-number">
+                    01
+                </div>
+
+                <div class="timeline-content">
+
+                    <!-- ✏️ UBAH KALIMAT KECIL DI SINI -->
+                    <span>
+                        the first hello
+                    </span>
+
+                    <!-- ✏️ UBAH JUDUL DI SINI -->
+                    <h3>
+                        the day we met
+                    </h3>
+
+                    <!-- ✏️ UBAH CERITA DI SINI -->
+                    <p>
+                        gua masih inget first time gua ketemu sama nana. waktu itu gua honestly belum kepikiran apa-apa, cuma yaudah, kita ketemu, ngobrol, and i thought it was just gonna be another normal day. tapi somehow, setelah hari itu, ada aja hal kecil tentang nana yang kepikiran sama gua. entah dari cara nana ngobrol, cara nana respon sesuatu, atau hal-hal kecil yang waktu itu mungkin gua sendiri belum sadar kalau ternyata bakal gua inget sampai sekarang. gua juga ga pernah nyangka kalau someone i met that day would eventually become someone this important to me. awalnya cuma kenal, terus makin sering ngobrol, makin nyaman, sampai akhirnya gua mulai ngerasa kalau keberadaan nana tuh punya tempat sendiri buat gua. and looking back, it’s kinda funny. karena waktu pertama kali ketemu, gua sama sekali ga tahu kalau someday gua bakal punya banyak cerita sama nana. ga tahu kalau bakal ada banyak random conversations, little moments, ketawa bareng, salah paham, bahkan moments yang bikin gua mikir about how much nana actually means to me. maybe our first meeting wasn't anything dramatic or perfect. it was just a simple moment, tapi ternyata dari moment sesederhana itu, banyak hal mulai terjadi. and if someone told me that day that nana would become this important to me, gua mungkin bakal ketawa and not believe them.
+                
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item reverse">
+
+                <div class="timeline-number">
+                    02
+                </div>
+
+                <div class="timeline-content">
+
+                    <!-- ✏️ UBAH KALIMAT KECIL DI SINI -->
+                    <span>
+                        little by little
+                    </span>
+
+                    <!-- ✏️ UBAH JUDUL DI SINI -->
+                    <h3>
+                        we started talking
+                    </h3>
+
+                    <!-- ✏️ UBAH CERITA DI SINI -->
+                    <p>
+                      kalau gua pikir-pikir lagi, lucu juga gimana kita bisa sampai sedeket ini. gua ga pernah benar-benar ngerasa ada satu titik di mana kita tiba-tiba jadi dekat. semuanya happened so naturally, sampai gua sendiri kadang ga sadar kalau ternyata kita udah sejauh ini. awalnya cuma ngobrol biasa, cerita hal-hal random, saling nanya tentang hari masing-masing. but somehow, gua selalu enjoy every little conversation we had. bahkan obrolan yang sebenernya ga penting-penting banget pun somehow selalu terasa beda kalau sama nana. semakin sering ngobrol, semakin banyak hal yang kita tahu tentang satu sama lain. dari cerita yang random banget sampai hal-hal yang mungkin ga semua orang tahu. and i think that's when gua mulai ngerasa comfortable around nana. gua suka gimana semuanya happened naturally. ga ada moment tertentu yang tiba-tiba bikin kita jadi deket. it was more like little things that kept happening, sampai akhirnya gua sadar, “kok sekarang gua udah cerita banyak banget sama nana?” dari yang awalnya cuma sekadar ngobrol, lama-lama gua mulai nyariin nana. mulai nungguin chat, pengen cerita kalau ada sesuatu, atau cuma pengen ngobrol walaupun sebenernya ga ada topik yang penting. and somehow, talking to nana became one of those little things that could make my day better. kita juga mulai punya banyak inside jokes, random conversations, little moments yang mungkin keliatannya sepele, tapi somehow selalu gua inget. bahkan dari hal-hal sesederhana itu, gua ngerasa kita jadi semakin dekat. i guess that's how it happened. not all at once, but little by little. sampai akhirnya gua sadar, nana bukan lagi cuma seseorang yang gua kenal. nana had slowly become someone i was genuinely happy to have in my life.
+
+                
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-number">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <!-- ✏️ UBAH KALIMAT KECIL DI SINI -->
+                    <span>
+                        somewhere along the way
+                    </span>
+
+                    <!-- ✏️ UBAH JUDUL DI SINI -->
+                    <h3>
+                        you became important
+                    </h3>
+
+                    <!-- ✏️ UBAH CERITA DI SINI -->
+                    <p>
+                     one of the things i really like about nana is how you always care about the little things. sometimes mungkin gua ga bilang apa-apa, tapi somehow nana always notices. cara nana nanyain gua, ngecek keadaan gua, atau sekadar make sure gua baik-baik aja, itu semua mungkin keliatan simple, but it means a lot to me. and i think what means even more to me is how nana selalu mau nungguin gua. bahkan ketika gua lagi sibuk, slow response, atau lagi ga bisa kasih waktu sebanyak yang gua mau, nana tetap ada. bukan dengan maksa gua buat selalu available, tapi dengan sabar nunggu sampai gua bisa balik lagi. gua suka banget perasaan knowing that someone is willing to wait for me. karena buat gua, nunggu itu bukan cuma soal waktu. it feels like nana is telling me, without even having to say it, that gua masih worth waiting for. sometimes gua mungkin ga selalu nunjukin seberapa much i appreciate it, tapi gua notice. gua inget setiap kali nana nungguin gua, setiap kali nana tetap perhatian even when gua lagi ga terlalu responsive. and honestly, that's something i really love about you. i love knowing that no matter how busy or messy my day gets, there’s still someone who cares enough to wait for me.
+
+                        
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="chapter-transition">
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p>
+                and then...
+            </p>
+
+            <span>
+                ♡
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         CONFESSION
+    ======================================== -->
+
+    <section id="confession" class="section confession">
+
+
+        <div class="section-title">
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p class="small-text">
+                chapter two
+            </p>
+
+            <!-- ✏️ UBAH JUDUL DI SINI -->
+            <h2>
+                something<br>
+                <span>i want to say.</span>
+            </h2>
+
+        </div>
+
+
+
+        <!-- ENVELOPE -->
+
+        <div class="letter-wrapper">
+
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-top"></div>
+
+                <div class="letter-preview">
+
+                    <!-- ✏️ UBAH KALIMAT DI SINI -->
+                    <span>
+                        for nana ♡
+                    </span>
+
+                    <!-- ✏️ UBAH KALIMAT DI SINI -->
+                    <p>
+                        click to open...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONFESSION CARD -->
+
+        <div class="confession-card" id="confessionCard">
+
+            <!-- ✏️ UBAH SAPAAN DI SINI -->
+            <p class="number">
+                dear nana,
+            </p>
+
+            <!-- ✏️ UBAH JUDUL CONFESSION DI SINI -->
+            <h3>
+                there's something<br>
+                i've been wanting to say.
+            </h3>
+
+            <div class="line"></div>
+
+            <!-- ✏️ UBAH ISI CONFESSION DI SINI -->
+            <p>
+                nana, somewhere between all our random conversations, you waiting for me, and me getting used to having you around, i think i fell for you. i don’t really know when it happened. i just know that now, whenever i think about who i want beside me, somehow it’s always you. so maybe we stop wondering what this is and make it something we can actually call ours.
+            </p>
+
+            <!-- ✏️ UBAH ISI CONFESSION DI SINI -->
+            <p>
+                nana, can i call you mine?
+            </p>
+
+            <!-- ✏️ UBAH KALIMAT PENUTUP CONFESSION DI SINI -->
+            <p>
+                maybe i don't say it enough,
+                but i'm really glad that i met you.
+            </p>
+
+            <div class="signature">
+
+                <!-- ✏️ UBAH KALIMAT SIGNATURE DI SINI -->
+                with a little bit of courage,<br>
+
+                <!-- ✏️ UBAH NAMA DI SINI -->
+                <strong>
+                    risel
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         ENDING
+    ======================================== -->
+
+    <section id="ending" class="ending">
+
+
+        <div class="ending-content">
+
+            <!-- ✏️ UBAH KALIMAT DI SINI -->
+            <p class="small-text">
+                and finally...
+            </p>
+
+            <!-- ✏️ UBAH JUDUL ENDING DI SINI -->
+            <h2>
+                this isn't<br>
+                <span>the end.</span>
+            </h2>
+
+            <div class="ending-line"></div>
+
+            <!-- ✏️ UBAH PESAN PENUTUP DI SINI -->
+            <p class="final-message">
+                thank you for being one of my favorite
+                parts of this chapter.
+            </p>
+
+            <!-- ✏️ UBAH PESAN PENUTUP DI SINI -->
+            <p class="final-message">
+                whatever happens next,
+                i'm just glad our paths crossed.
+            </p>
+
+            <div class="big-heart">
+                ♡
+            </div>
+
+            <!-- ✏️ UBAH KALIMAT INI -->
+            <p class="made-with">
+                made with a little love ♡
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <!-- ✏️ UBAH KALIMAT FOOTER DI SINI -->
+        <p>
+            one very special person ♡
+        </p>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script>
+
+        const envelope = document.getElementById("envelope");
+        const confessionCard = document.getElementById("confessionCard");
+
+        envelope.addEventListener("click", function () {
+
+            envelope.classList.toggle("open");
+
+            confessionCard.classList.toggle("show");
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+```
